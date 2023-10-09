@@ -9,8 +9,10 @@ var specialCharacters = [' ','!','"','#','$','%','&','*','+','-','.','<','>','='
 function generatePassword() {
 var password = '';
 for(var x = 0; x < length; x++){
-  var randomChar = Math.floor(Math.random() *
+  var randomChar = Math.floor(Math.random() * choices.length);
+  password = password + choices[randomChar];
 }
+return password;
 }
 
 function givePrompts(){
