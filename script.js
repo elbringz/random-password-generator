@@ -10,6 +10,22 @@ function generatePassword() {
 
 }
 
+function givePrompts(){
+  length = prompt("How many characters should your password contain? (8-128 characters)");
+  if(length < 8 || length > 128){
+    alert('Password length must be a number 8-128. Please try again');
+    return false;
+  }
+
+  if(confirm('Would you like uppercase letters to be included in your password?')) {
+    choices = choices.concat(uppercase);
+  }
+
+  if(confirm('Would you like lowercase letters to be included in your password?')) {
+    choices = choices.concat(lowercase);
+  }
+}
+
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
